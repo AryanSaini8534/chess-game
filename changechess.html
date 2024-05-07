@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style>
+        #chessboard {
+            width: 700px;
+            height: 700px;
+            border: 3px solid red;
+        }
+		
+		.chess-square:hover {
+		        opacity: 0.3;
+			}
+        .chess-square {
+            float: left;
+            width: 87.5px;
+            height: 87.5px;
+            background-color: #FFFF80;
+        }
+		
+        .c {
+            margin-top: -80px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+
+<div id="chessboard">
+    <script src="changechess_files/jquery%20class5.html"></script>
+    <script>
+        var chessboard = document.getElementById('chessboard');
+        var squares = [];
+
+        for (var i = 0; i < 8; i++) {
+            for (var j = 0; j < 8; j++) {
+                var chessSquare = document.createElement('div');
+                chessSquare.className = 'chess-square';
+                if ((i + j) % 2 == 0) {
+                    chessSquare.style.backgroundColor = '#990000';
+                }
+                squares.push(chessSquare);
+                chessboard.appendChild(chessSquare);
+            }
+        }
+
+        // Function to create and append a token with a click event
+        function createToken(src, alt, width, height) {
+            var token = document.createElement('img');
+            token.src = src;
+            token.alt = alt;
+            token.width = width;
+            token.height = height;
+            return token;
+        }
+
+        // Tokens data
+        var tokensData = [
+            { src: "tokenrooks0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenknight0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenbishope0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenqueen0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenking0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenbishope0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenknight0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenrooks0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn0.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenpawn1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenrooks1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenknight1.png", alt: "chess", width: 80, height: 80 },
+            { src: "tokenbishope1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenqueen1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenking1.png", alt: "chess", width: 100, height: 90 },
+            { src: "tokenbishope1.png", alt: "chess", width: 90, height: 90 },
+            { src: "tokenknight1.png", alt: "chess", width: 82, height: 82 },
+            { src: "tokenrooks1.png", alt: "chess", width: 90, height: 90 }
+        ];
+
+        // Add tokens to squares and attach click events
+        for (var k = 0; k < squares.length; k++) {
+            var square = squares[k];
+            var tokenData = tokensData[k];
+            if (tokenData) {
+                var token = createToken(tokenData.src, tokenData.alt, tokenData.width, tokenData.height);
+                square.appendChild(token);
+                token.addEventListener('click', function() {
+                    var src = this.getAttribute('src');
+                    if (src.startsWith('new_')) {
+                        src = src.replace('new_', '');
+                    } else {
+                        src = 'new_' + src;
+                    }
+                    this.setAttribute('src', src);
+                });
+            }
+        }
+    </script><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenrooks0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenknight0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenbishope0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenqueen0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenking0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenbishope0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenknight0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenrooks0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn0.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenpawn1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenrooks1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenknight1.png" alt="chess" width="80" height="80"></div><div class="chess-square"><img src="changechess_files/tokenbishope1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenqueen1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenking1.png" alt="chess" width="100" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenbishope1.png" alt="chess" width="90" height="90"></div><div class="chess-square"><img src="changechess_files/tokenknight1.png" alt="chess" width="82" height="82"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"><img src="changechess_files/tokenrooks1.png" alt="chess" width="90" height="90"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div><div class="chess-square"></div><div class="chess-square" style="background-color: rgb(153, 0, 0);"></div>
+</div>
+
+
+
+</body></html>

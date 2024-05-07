@@ -1,0 +1,24 @@
+
+    <script>
+     let output = "";
+    for (let i = 0; i < a; i++) {
+        for (let j = 0; j < b; j++) {
+            if ((i + j) % 2 === 0) {
+                output += "█ "; 
+            } else {
+                output += "  "; 
+            }
+        }
+        output += "\n";
+    }
+    return output;
+}
+
+
+        const a = 8;
+        const b = 8;
+
+
+        console.log(generateChessboard(rows, cols));
+</script>
+

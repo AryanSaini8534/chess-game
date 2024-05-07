@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+        #chessboard {
+            width: 700px;
+            height: 700px;
+            border: 3px solid red;
+        }
+		
+		.chess-square:hover {
+		        opacity: 0.3;
+				
+			}
+        .chess-square {
+            float: left;
+            width: 87.5px;
+            height: 87.5px;
+            background-color: #FFFF80;
+        }
+		
+		
+        .c {
+            margin-top: -80px;
+            z-index: 5;
+        }
+</style>
+</head>
+<body>
+
+<div id="chessboard">
+
+        <script src = "file:///D:/aryan%20saini/jquery%20class5.html"></script>
+<script>
+    var chessboard = document.getElementById('chessboard');
+    var squares = [];
+
+    for (var i = 0; i < 8; i++) {
+        for (var j = 0; j < 8; j++) {
+            var chessSquare = document.createElement('div');
+            chessSquare.className = 'chess-square';
+            if ((i + j) % 2 == 0) {
+               
+                chessSquare.style.backgroundColor = '#990000';
+            }
+            squares.push(chessSquare);
+            chessboard.appendChild(chessSquare);
+        }
+    }
+
+    var token1 = document.createElement('img');
+    token1.src = "tokenrooks0.png";
+    token1.alt = "chess";
+    token1.width = 90;
+    token1.height = 90;
+    squares[0].appendChild(token1); 
+	
+	
+    var token2 = document.createElement('img');
+    token2.src = "tokenknight0.png";
+    token2.alt = "chess";
+    token2.height = 90;
+    token2.width = 90;
+    squares[1].appendChild(token2); 
+	
+	
+    var token3 = document.createElement('img');
+    token3.src = "tokenbishope0.png";
+    token3.alt = "chess";
+    token3.height = 90;
+    token3.width = 90;
+    squares[2].appendChild(token3); 
+	
+	
+    var token4= document.createElement('img');
+    token4.src = "tokenqueen0.png";
+    token4.alt = "chess";
+    token4.height = 90;
+    token4.width = 90;
+    squares[3].appendChild(token4); 
+	
+	
+	var token5 = document.createElement('img');
+	token5.src = "tokenking0.png";
+	token5.alt = "chess";
+	token5.height = 90;
+	token5.width = 90;
+	squares[4].appendChild(token5);
+	
+	
+	var token6 = document.createElement('img');
+	token6.src = "tokenbishope0.png";
+	token6.alt = "chess";
+	token6.height = 90;
+	token6.width = 90;
+	squares[5].appendChild(token6);
+	
+	var token7 = document.createElement('img');
+	token7.src = "tokenknight0.png";
+	token7.alt = "chess";
+	token7.height = 90;
+	token7.width = 90;
+	squares[6].appendChild(token7);
+	
+	
+    var token8 = document.createElement('img');
+    token8.src = "tokenrooks0.png";
+    token8.alt = "chess";
+    token8.height = 90;
+    token8.width = 90;
+    squares[7].appendChild(token8);
+    
+    
+    var token9 = document.createElement('img');
+    token9.src = "tokenpawn0.png";
+    token9.alt = "chess";
+    token9.height = 90;
+    token9.width = 90;
+    squares[8].appendChild(token9); 
+	
+	 var token10 = document.createElement('img');
+    token10.src = "tokenpawn0.png";
+    token10.alt = "chess";
+    token10.height = 90;
+    token10.width = 90;
+    squares[9].appendChild(token10); 
+	
+	 var token11 = document.createElement('img');
+    token11.src = "tokenpawn0.png";
+    token11.alt = "chess";
+    token11.height = 90;
+    token11.width = 90;
+    squares[10].appendChild(token11); 
+	
+	 var token12 = document.createElement('img');
+    token12.src = "tokenpawn0.png";
+    token12.alt = "chess";
+    token12.height = 90;
+    token12.width = 90;
+    squares[11].appendChild(token12); 
+	
+	 var token13 = document.createElement('img');
+    token13.src = "tokenpawn0.png";
+    token13.alt = "chess";
+    token13.height = 90;
+    token13.width = 90;
+    squares[12].appendChild(token13); 
+	
+	 var token14 = document.createElement('img');
+    token14.src = "tokenpawn0.png";
+    token14.alt = "chess";
+    token14.height = 90;
+    token14.width = 90;
+    squares[13].appendChild(token14); 
+	
+	 var token15 = document.createElement('img');
+    token15.src = "tokenpawn0.png";
+    token15.alt = "chess";
+    token15.height = 90;
+    token15.width = 90;
+    squares[14].appendChild(token15); 
+	
+	 var token16 = document.createElement('img');
+    token16.src = "tokenpawn0.png";
+    token16.alt = "chess";
+    token16.height = 90;
+    token16.width = 90;
+    squares[15].appendChild(token16); 
+	
+	
+	 var token49 = document.createElement('img');
+    token49.src = "tokenpawn1.png";
+    token49.alt = "chess";
+    token49.height = 90;
+    token49.width = 90;
+    squares[48].appendChild(token49); 
+	
+	
+	var token50 = document.createElement('img');
+	token50.src = "tokenpawn1.png";
+	token50.alt = "vishu"; 
+	token50.height = "90";
+	token50.width = "90";
+	squares[49].appendChild(token50);
+	
+	var token51 = document.createElement('img');
+	token51.src = "tokenpawn1.png";
+	token51.alt = "vishu";
+	token51.height = "90";
+	token51.width = "90";
+	squares[50].appendChild(token51);
+	
+	var token52 = document.createElement('img');
+	token52.src = "tokenpawn1.png";
+	token52.alt = "vishu";
+	token52.height = "90";
+	token52.width = "90";
+	squares[51].appendChild(token52);
+	
+	var token53 = document.createElement('img');
+	token53.src = "tokenpawn1.png";
+	token53.alt = "vishu";
+	token53.height = "90";
+	token53.width = "90";
+	squares[52].appendChild(token53);
+	
+	var token54 = document.createElement('img');
+	token54.src = "tokenpawn1.png";
+	token54.alt = "token";
+	token54.height = "90";
+	token54.width = "90";
+	squares[53].appendChild(token54);
+	
+	var token55 = document.createElement('img');
+	token55.src = "tokenpawn1.png";
+	token55.alt = "token";
+	token55.height = "90";
+	token55.width = "90";
+	squares[54].appendChild(token55);
+	
+	var token56 = document.createElement('img');
+	token56.src = "tokenpawn1.png";
+	token56.alt = "vidhu";
+	token56.height = "90";
+	token56.width = "90";
+	squares[55].appendChild(token56);
+	
+	
+		
+	var token57 = document.createElement('img');
+	token57.src = "tokenrooks1.png";
+	token57.alt = "vidhu";
+	token57.height = "90";
+	token57.width = "90";
+	squares[56].appendChild(token57);
+	
+		
+	var token58 = document.createElement('img');
+	token58.src = "tokenknight1.png";
+	token58.alt = "vidhu";
+	token58.height = "80";
+	token58.width = "80";
+	squares[57].appendChild(token58);
+	
+		
+	var token59 = document.createElement('img');
+	token59.src = "tokenbishope1.png";
+	token59.alt = "vidhu";
+	token59.height = "90";
+	token59.width = "90";
+	squares[58].appendChild(token59);
+	
+		
+	var token60 = document.createElement('img');
+	token60.src = "tokenqueen1.png";
+	token60.alt = "vidhu";
+	token60.height = "90";
+	token60.width = "90";
+	squares[59].appendChild(token60);
+	
+		
+	var token61 = document.createElement('img');
+	token61.src = "tokenking1.png";
+	token61.alt = "vidhu";
+	token61.height = "100";
+	token61.width = "90";
+	squares[60].appendChild(token61);
+	
+		
+	var token62 = document.createElement('img');
+	token62.src = "tokenbishope1.png";
+	token62.alt = "vidhu";
+	token62.height = "90";
+	token62.width = "90";
+	squares[61].appendChild(token62);
+	
+		
+	var token63 = document.createElement('img');
+	token63.src = "tokenknight1.png";
+	token63.alt = "vidhu";
+	token63.height = "82";
+	token63.width = "82";
+	squares[62].appendChild(token63);
+	
+		
+	var token64 = document.createElement('img');
+	token64.src = "tokenrooks1.png";
+	token64.height = "90";
+	token64.width = "90";
+    token64.id = "token64"; 
+    squares[63].appendChild(token64); 
+
+    
+    $(document).ready(function(){
+        $("#token64").click(function(){
+            $(this).attr('src', 'new_tokenrooks1.png');
+        });
+    
+        $("#token63").click(function(){
+            $(this).attr('src', 'new_tokenknight1.png');
+        });
+    
+        $("#token62").click(function(){
+            $(this).attr('src', 'new_tokenbishope1.png');
+        });
+	
+        $("#token61").click(function(){
+            $(this).attr('src', 'new_tokenking1.png');
+        });
+	
+	 });
+    $(document).ready(function(){
+        $("#token60").click(function(){
+            $(this).attr('src', 'new_tokenqueen1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token59").click(function(){
+            $(this).attr('src', 'new_tokenbishope1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token58").click(function(){
+            $(this).attr('src', 'new_tokenknight1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token57").click(function(){
+            $(this).attr('src', 'new_tokenrooks1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token56").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token55").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token54").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token53").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token52").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token51").click(function(){
+            $(this).attr('src', 'new_tokenkpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token50").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    }); 
+    $(document).ready(function(){
+        $("#token49").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    });
+	
+	 $(document).ready(function(){
+        $("#token48").click(function(){
+            $(this).attr('src', 'new_tokenpawn1.png');
+        });
+    });
+	
+	 $(document).ready(function(){
+        $("#token15").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token14").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token13").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token12").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token11").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token10").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token9").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token8").click(function(){
+            $(this).attr('src', 'new_tokenpawn0.png');
+        });
+    });
+	
+	 $(document).ready(function(){
+        $("#token7").click(function(){
+            $(this).attr('src', 'new_tokenrooks0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token6").click(function(){
+            $(this).attr('src', 'new_tokenknight0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token5").click(function(){
+            $(this).attr('src', 'new_tokenbishope0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token4").click(function(){
+            $(this).attr('src', 'new_tokenking0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token3").click(function(){
+            $(this).attr('src', 'new_tokenqueen0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token2").click(function(){
+            $(this).attr('src', 'new_tokenbishope0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token1").click(function(){
+            $(this).attr('src', 'new_tokenknight0.png');
+        });
+    }); $(document).ready(function(){
+        $("#token0").click(function(){
+            $(this).attr('src', 'new_tokenrooks0.png');
+        });
+    });
+	
+		
+	
+	
+	
+
+</script>
+</div>
+
+</body> 
+</html>
